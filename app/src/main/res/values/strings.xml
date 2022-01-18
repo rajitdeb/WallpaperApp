@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WallpaperApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_preview_screen">PreviewScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="sample_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</string>
+    <string name="sample_text_photographer">Photo by Sam Johnson from Unsplash. Learn More.</string>
+</resources>
