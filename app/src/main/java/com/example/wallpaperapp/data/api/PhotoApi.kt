@@ -8,9 +8,11 @@ import retrofit2.http.*
 interface PhotoApi {
 
     @Headers("Authorization: ${Constants.API_KEY}")
-    @GET("curated")
-    suspend fun getCuratedPhotos(
+    @GET("search")
+    suspend fun searchPhotoByDefaultQuery(
+        @Query("query") searchQuery: String,
         @Query("page") page: Int,
+        @Query("orientation") orientation: String,
         @Query("per_page") perPage: Int
     ): Response<PhotoResponse>
 
@@ -19,6 +21,7 @@ interface PhotoApi {
     suspend fun searchPhotoByQuery(
         @Query("query") searchQuery: String,
         @Query("page") page: Int,
+        @Query("orientation") orientation: String,
         @Query("per_page") perPage: Int
     ): Response<PhotoResponse>
 

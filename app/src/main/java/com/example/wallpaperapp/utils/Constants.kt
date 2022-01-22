@@ -8,6 +8,7 @@ object Constants {
     const val DEFAULT_PAGE_INDEX = 1
     const val RESULTS_PER_PAGE = 40
 
-    const val DEFAULT_QUERY = "nature"
+    const val DEFAULT_QUERY = "landscape"
+    const val ORIENTATION_PORTRAIT = "portrait"
 
 }

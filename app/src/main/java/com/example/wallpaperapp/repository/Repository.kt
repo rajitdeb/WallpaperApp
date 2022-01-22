@@ -17,7 +17,7 @@ class Repository {
 
     private val photoApi: PhotoApi = retrofit.create(PhotoApi::class.java)
 
-    fun getCuratedPhotos() = Pager(
+    fun getDefaultPhotosList() = Pager(
         config = PagingConfig(
             pageSize = 20,
             maxSize = 100,

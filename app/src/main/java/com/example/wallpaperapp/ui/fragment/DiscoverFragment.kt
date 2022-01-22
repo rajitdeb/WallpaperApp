@@ -3,11 +3,13 @@ package com.example.wallpaperapp.ui.fragment
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wallpaperapp.R
@@ -34,7 +36,11 @@ class DiscoverFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        homeRecyclerAdapter = HomeRecyclerAdapter()
+        homeRecyclerAdapter = HomeRecyclerAdapter {
+            Toast.makeText(context, "Wallpaper: $it", Toast.LENGTH_LONG).show()
+            findNavController().navigate(DiscoverFragmentDirections.actionDiscoverToWallpaperPreview(it))
+        }
+
         binding.discoverRv.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = homeRecyclerAdapter.withLoadStateHeaderAndFooter(

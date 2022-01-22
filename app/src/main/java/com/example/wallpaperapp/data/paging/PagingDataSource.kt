@@ -7,6 +7,7 @@ import com.example.wallpaperapp.data.api.PhotoApi
 import com.example.wallpaperapp.data.model.PhotoModel
 import com.example.wallpaperapp.data.model.PhotoResponse
 import com.example.wallpaperapp.utils.Constants
+import com.example.wallpaperapp.utils.Constants.ORIENTATION_PORTRAIT
 import retrofit2.Response
 import java.lang.Exception
 
@@ -27,11 +28,14 @@ class PagingDataSource(
                 photoApiService.searchPhotoByQuery(
                     searchQuery,
                     position,
+                    ORIENTATION_PORTRAIT,
                     Constants.RESULTS_PER_PAGE
                 )
             } else {
-                photoApiService.getCuratedPhotos(
+                photoApiService.searchPhotoByDefaultQuery(
+                    Constants.DEFAULT_QUERY,
                     position,
+                    ORIENTATION_PORTRAIT,
                     Constants.RESULTS_PER_PAGE
                 )
             }

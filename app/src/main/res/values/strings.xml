@@ -8,4 +8,6 @@
 
     <string name="sample_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</string>
     <string name="sample_text_photographer">Photo by Sam Johnson from Unsplash. Learn More.</string>
+    <string name="title_activity_wallpaper_preview">WallpaperPreview</string>
+    <string name="apply_wallpaper">Apply Wallpaper</string>
 </resources>

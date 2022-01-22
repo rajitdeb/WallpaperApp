@@ -7,15 +7,22 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.wallpaperapp.data.model.PhotoModel
-import com.example.wallpaperapp.data.model.PhotoResponse
 import com.example.wallpaperapp.databinding.PhotoItemRowBinding
-import com.example.wallpaperapp.utils.PhotosDiffUtil
 
-class HomeRecyclerAdapter:
-    PagingDataAdapter<PhotoModel, HomeRecyclerAdapter.HomeRecyclerViewHolder>(DIFF_UTIL_CALLBACK()) {
+class HomeRecyclerAdapter(
+    val onWallpaperClick: (photoUrl: String) -> Unit
+) : PagingDataAdapter<PhotoModel, HomeRecyclerAdapter.HomeRecyclerViewHolder>(DIFF_UTIL_CALLBACK()) {
 
     inner class HomeRecyclerViewHolder(private val binding: PhotoItemRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                val position = absoluteAdapterPosition
+                val item: PhotoModel = getItem(position)!!
+                onWallpaperClick(item.src.original)
+            }
+        }
 
         fun bind(photo: PhotoModel) {
             binding.apply {

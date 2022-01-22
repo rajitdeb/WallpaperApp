@@ -9,10 +9,27 @@
         android:id="@+id/home"
         android:name="com.example.wallpaperapp.ui.fragment.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_wallpaperPreview"
+            app:destination="@id/wallpaperPreview" />
+    </fragment>
     <fragment
         android:id="@+id/discover"
         android:name="com.example.wallpaperapp.ui.fragment.DiscoverFragment"
         android:label="Discover"
-        tools:layout="@layout/fragment_discover" />
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_discover_to_wallpaperPreview"
+            app:destination="@id/wallpaperPreview" />
+    </fragment>
+    <activity
+        android:id="@+id/wallpaperPreview"
+        android:name="com.example.wallpaperapp.ui.activity.WallpaperPreview"
+        android:label="activity_wallpaper_preview"
+        tools:layout="@layout/activity_wallpaper_preview" >
+        <argument
+            android:name="photoUrl"
+            app:argType="string" />
+    </activity>
 </navigation>

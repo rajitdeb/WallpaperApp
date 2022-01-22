@@ -20,7 +20,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository: Repository = Repository()
 
-    val photos = repository.getCuratedPhotos().cachedIn(viewModelScope)
+    val photos = repository.getDefaultPhotosList().cachedIn(viewModelScope)
 
     fun searchPhotos(query: String): Flow<PagingData<PhotoModel>> {
         return repository.getPhotoByQuery(query).cachedIn(viewModelScope)
